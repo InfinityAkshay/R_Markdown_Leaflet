@@ -42,4 +42,4 @@ map
 
 # Data
 - The data of the countries and their capitals can be found [here](https://gist.github.com/ofou/df09a6834a8421b4f376c875194915c9)
-- The code is hosted at [this github repository](add github repo)
+- The code is hosted at [this github repository](https://github.com/InfinityAkshay/R_Markdown_Leaflet)
