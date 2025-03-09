@@ -1,0 +1,45 @@
+---
+title: "Interactive Map"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load-libraries, include=FALSE}
+library(leaflet)
+library(dplyr)
+```
+
+# What is this page about?
+This page is about creating an interactive map using the leaflet package in R.
+<br> We create an interacive map showing all the capitals of the countries in the world.
+
+# Code
+Here's the r code to create an interactive map
+```{r}
+country_data <- read.csv("countryCapital.csv")
+
+map <- leaflet(country_data) %>%
+  addTiles() %>%
+  addCircleMarkers(
+    ~Longitude, ~Latitude,
+    label = ~paste(Capital.City),
+    popup = ~paste("Country: ", Country, "<br>", "Capital: ", Capital.City),
+    radius = 5,
+    color = "blue",
+    fillOpacity = 0.7
+  )
+```
+
+# Map
+Here's the final interactive map. Click on a blue dot formore details.
+```{r}
+map
+```
+
+# Data
+- The data of the countries and their capitals can be found [here](https://gist.github.com/ofou/df09a6834a8421b4f376c875194915c9)
+- The code is hosted at [this github repository](add github repo)
